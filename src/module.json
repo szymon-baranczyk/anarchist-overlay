@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/foundryvtt-manifest.json",
-  "id": "foundry-module-ts",
-  "title": "Typescript Template Module",
-  "description": "A template module using Typescript. You should change name, title, and description in module.json.",
+  "id": "anarchist-overlay",
+  "title": "Anarchist Overlay",
+  "description": "Fancy overlay stuff",
   "version": "1.0.0",
   "packs": [],
   "system": [],
@@ -13,13 +13,6 @@
     "verified": "10",
     "maximum": "10"
   },
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
-  ],
   "styles": ["style.css"],
   "esmodules": ["scripts/module.js"]
 }
