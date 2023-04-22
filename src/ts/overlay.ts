@@ -4,11 +4,10 @@ import {moduleId} from "./constants";
 export type OverlayConfig = {
   positionX?: string;
   positionY?: string;
-  offsetX?: string;
-  offsetY?: string;
   fadeOnClose?: boolean;
   closeTime?: number;
   closeAllWindows?: boolean;
+  aboveUi?: boolean;
 }
 
 type NormalizedOverlayConfig = Required<OverlayConfig>;
@@ -32,7 +31,7 @@ const handleOverlayCreation = async (config: OverlayConfig, html: string) => {
   overlay.innerHTML = html;
   document.body.append(overlay);
 
-  if(config.closeAllWindows) {
+  if(normalizedConfig.closeAllWindows) {
     closeAllWindows();
   }
 
@@ -55,11 +54,10 @@ const normalizeConfig = (config: OverlayConfig): NormalizedOverlayConfig => {
   return {
     positionX: config.positionX || 'center',
     positionY: config.positionY || 'center',
-    offsetX: config.offsetX || '0px',
-    offsetY: config.offsetY || '0px',
     fadeOnClose: config.fadeOnClose || true,
     closeTime: config.closeTime || 15,
-    closeAllWindows: config.closeAllWindows || true
+    closeAllWindows: config.closeAllWindows || true,
+    aboveUi: config.aboveUi || true
   }
 }
 

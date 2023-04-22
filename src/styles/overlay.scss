@@ -5,9 +5,7 @@
   display: flex;
   opacity: 1;
   transition: opacity 2s;
-  &.under-ui {
-    z-index: 100;
-  }
+  z-index: 100;
 
   &.above-ui {
     z-index: 200;
