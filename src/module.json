@@ -14,5 +14,6 @@
     "maximum": "10"
   },
   "styles": ["style.css"],
-  "esmodules": ["scripts/module.js"]
+  "esmodules": ["scripts/module.js"],
+  "socket": true
 }
