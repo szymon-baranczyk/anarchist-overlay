@@ -1,25 +1,21 @@
 // Do not remove this import. If you do Vite will think your styles are dead
 // code and not include them in the build output.
-import "../styles/style.scss";
-import DogBrowser from "./apps/dogBrowser";
-import { moduleId } from "./constants";
-import { MyModule } from "./types";
+import '../styles/style.scss';
+import { moduleId } from './constants';
+import { AnarchistOverlayModule } from './types';
+import { setupSocket } from './socket';
+import { createOverlay, setupOverlaySocket } from './overlay';
 
-let module: MyModule;
+let module: AnarchistOverlayModule;
 
-Hooks.once("init", () => {
+Hooks.once('init', () => {
   console.log(`Initializing ${moduleId}`);
 
-  module = (game as Game).modules.get(moduleId) as MyModule;
-  module.dogBrowser = new DogBrowser();
+  module = (game as Game).modules.get(moduleId) as AnarchistOverlayModule;
 });
 
-Hooks.on("renderActorDirectory", (_: Application, html: JQuery) => {
-  const button = $(
-    `<button class="cc-sidebar-button" type="button">🐶</button>`
-  );
-  button.on("click", () => {
-    module.dogBrowser.render(true);
-  });
-  html.find(".directory-header .action-buttons").append(button);
+Hooks.once('socketlib.ready', () => {
+  const socket = setupSocket();
+  setupOverlaySocket(socket);
+  module.createOverlay = createOverlay(socket);
 });

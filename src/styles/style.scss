@@ -1,16 +1,16 @@
-.window-app .window-content section.module-dog-picture-container {
-  flex: 100;
+.anarchist-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  margin-top: 10px;
-
-  .module-dog-placeholder {
-    font-size: 200px;
+  opacity: 1;
+  transition: opacity 2s;
+  &.under-ui {
+    z-index: 100;
   }
 
-  img.module-dog-image {
-    object-fit: contain;
-    border: none;
+  &.above-ui {
+    z-index: 200;
   }
 }
+
