@@ -12,5 +12,8 @@
   &.above-ui {
     z-index: 200;
   }
+  &.fade-out {
+    opacity: 0;
+  }
 }
 

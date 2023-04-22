@@ -13,7 +13,15 @@
     "verified": "10",
     "maximum": "10"
   },
-  "styles": ["style.css"],
+  "relationships": {
+    "requires": [
+      {
+        "id": "socketlib",
+        "type": "module"
+      }
+    ]
+  },
+  "styles": ["overlay.css"],
   "esmodules": ["scripts/module.js"],
   "socket": true
 }
