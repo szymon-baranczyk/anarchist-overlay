@@ -21,7 +21,7 @@
       }
     ]
   },
-  "styles": ["overlay.css"],
+  "styles": ["style.css"],
   "esmodules": ["scripts/module.js"],
   "socket": true
 }
