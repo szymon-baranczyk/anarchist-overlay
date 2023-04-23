@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install through a manifest link:
+Install using a manifest link:
 ```
 https://github.com/reynevan24/anarchist-overlay/releases/latest/download/module.json
 ```
