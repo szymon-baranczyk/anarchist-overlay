@@ -1,7 +1,11 @@
 # Anarchist Overlay
 
+## Installation
 
-
+Install through a manifest link:
+```
+https://github.com/reynevan24/anarchist-overlay/releases/latest/download/module.json
+```
 
 ## Example usage:
 
