@@ -9,6 +9,7 @@ https://github.com/reynevan24/anarchist-overlay/releases/latest/download/module.
 
 ## Example usage:
 
+Macro:
 ```js
 
 const overlayConfig = {
