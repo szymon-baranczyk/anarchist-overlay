@@ -28,11 +28,11 @@ export const createTextCrawlHtml = async (config: TextCrawlConfig) => {
 
 const normalizeConfig = (config: TextCrawlConfig): NormalizedConfig => {
   return {
-    offsetX: config.offsetX || '0',
-    offsetY: config.offsetY || '0',
-    typingTime: config.typingTime || 2,
-    delay: config.delay || 1,
-    blackBars: config.blackBars || true,
-    lines: config.lines.map(lines => ({text: lines.text, fontSize: lines.fontSize || '32px'}))
+    offsetX: config.offsetX ?? '0',
+    offsetY: config.offsetY ?? '0',
+    typingTime: config.typingTime ?? 2,
+    delay: config.delay ?? 1,
+    blackBars: config.blackBars ?? true,
+    lines: config.lines.map(lines => ({text: lines.text, fontSize: lines.fontSize ?? '32px'}))
   };
 }
