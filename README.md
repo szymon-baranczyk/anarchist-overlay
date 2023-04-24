@@ -1,5 +1,7 @@
 # Anarchist Overlay
 
+Module for the Foundry VTT, allowing to render arbitrary HTML in a configurable overlay above the canvas for all users simultaneously. It also includes a method for getting HTML for mission briefing-like text crawl.
+
 ## Installation
 
 Install using a manifest link:
