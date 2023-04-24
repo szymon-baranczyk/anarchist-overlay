@@ -1,3 +1,3 @@
-import { id } from '../module.json';
+import { name } from '../module.json';
 
-export const moduleId = id;
+export const moduleId = name;

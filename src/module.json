@@ -1,27 +1,16 @@
 {
-  "$schema": "https://json.schemastore.org/foundryvtt-manifest.json",
-  "id": "anarchist-overlay",
+  "name": "anarchist-overlay",
   "title": "Anarchist Overlay",
   "description": "Fancy overlay stuff",
   "version": "0.1.0",
-  "packs": [],
-  "system": [],
-  "dependencies": [],
-  "scripts": [],
-  "compatibility": {
-    "minimum": "9",
-    "verified": "10",
-    "maximum": "10"
-  },
-  "relationships": {
-    "requires": [
-      {
-        "id": "socketlib",
-        "type": "module"
-      }
-    ]
-  },
+  "minimumCoreVersion" : "9",
+  "compatibleCoreVersion" : "10",
+  "library": true,
   "styles": ["style.css"],
   "esmodules": ["scripts/module.js"],
-  "socket": true
+  "socket": true,
+  "dependencies": [{
+    "name": "socketlib",
+    "type": "module"
+  }]
 }
