@@ -52,12 +52,12 @@ const handleClosingOverlay = async (overlay: HTMLElement, config: NormalizedOver
 
 const normalizeConfig = (config: OverlayConfig): NormalizedOverlayConfig => {
   return {
-    positionX: config.positionX || 'center',
-    positionY: config.positionY || 'center',
-    fadeOnClose: config.fadeOnClose || true,
-    closeTime: config.closeTime || 15,
-    closeAllWindows: config.closeAllWindows || true,
-    aboveUi: config.aboveUi || true
+    positionX: config.positionX ?? 'center',
+    positionY: config.positionY ?? 'center',
+    fadeOnClose: config.fadeOnClose ?? true,
+    closeTime: config.closeTime ?? 15,
+    closeAllWindows: config.closeAllWindows ?? true,
+    aboveUi: config.aboveUi ?? true
   }
 }
 
