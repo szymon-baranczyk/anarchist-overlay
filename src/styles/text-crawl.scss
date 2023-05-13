@@ -42,3 +42,92 @@
   color: white;
   line-height: 1;
 }
+
+$offset: 0.05em;
+$big-offset: 2 * $offset;
+$small-offset: $offset * 0.5;
+$red: rgba(255, 0, 0, 0.75);
+$blue: rgba(0, 0, 255, 0.75);
+$green: rgba(0, 255, 0, 0.75);
+
+.glitch {
+  position: relative;
+
+  text-shadow: $big-offset 0 0 $red,
+  (-$offset) (-$big-offset) 0 $green,
+  $offset $big-offset 0 $blue;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch calc(var(--glitchTime) + 0.125s) infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate((-$offset), -$small-offset);
+  /* color: green; */
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch calc(var(--glitchTime) - 0.125s) infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate($small-offset, $offset);
+  /* color: red; */
+  opacity: 0.8;
+}
+
+/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
+
+@keyframes glitch {
+  0% {
+    text-shadow: $big-offset 0 0 $red,
+    (-$big-offset) (-$offset) 0 $green,
+    (-$offset) $big-offset 0 $blue;
+  }
+  14% {
+    text-shadow: $big-offset 0 0 $red,
+    (-$big-offset) (-$offset) 0 $green,
+    (-$offset) $big-offset 0 $blue;
+  }
+  15% {
+    text-shadow: (-$big-offset) (-$offset) 0 $red,
+    $offset $offset 0 $green,
+    (-$big-offset) (-$big-offset) 0 $blue;
+  }
+  49% {
+    text-shadow: (-$big-offset) (-$offset) 0 $red,
+    $offset $offset 0 $green,
+    (-$big-offset) (-$big-offset) 0 $blue;
+  }
+  50% {
+    text-shadow: $offset $big-offset 0 $red,
+    $big-offset 0 0 $green, 0 (-$big-offset) 0 $blue;
+  }
+  99% {
+    text-shadow: $offset $big-offset 0 $red,
+    $big-offset 0 0 $green, 0 (-$big-offset) 0 $blue;
+  }
+  100% {
+    text-shadow: (-$offset) 0 0 $red,
+    (-$offset) (-$offset) 0 $green,
+    (-$offset) (-$big-offset) 0 $blue;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

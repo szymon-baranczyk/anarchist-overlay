@@ -5,12 +5,16 @@
   display: flex;
   opacity: 1;
   transition: opacity 2s;
+  pointer-events: none;
 
   &.above-ui {
     z-index: 200;
   }
   &.fade-out {
     opacity: 0;
+  }
+  &.block-interactions {
+    pointer-events: auto;
   }
 }
 

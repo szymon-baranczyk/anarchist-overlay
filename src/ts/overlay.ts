@@ -8,6 +8,7 @@ export type OverlayConfig = {
   closeTime?: number;
   closeAllWindows?: boolean;
   aboveUi?: boolean;
+  blockInteractions?: boolean;
 }
 
 type NormalizedOverlayConfig = Required<OverlayConfig>;
@@ -57,7 +58,8 @@ const normalizeConfig = (config: OverlayConfig): NormalizedOverlayConfig => {
     fadeOnClose: config.fadeOnClose ?? true,
     closeTime: config.closeTime ?? 15,
     closeAllWindows: config.closeAllWindows ?? true,
-    aboveUi: config.aboveUi ?? true
+    aboveUi: config.aboveUi ?? true,
+    blockInteractions: config.blockInteractions ?? true
   }
 }
 
