@@ -79,6 +79,7 @@ export type TextCrawlConfig = {
   typingTime?: number, // how long (in seconds) does the typing animation take per one line
   delay?: number, // how long (in seconds) does the typing animation pause before next line is typed
   blackBars?: boolean, // should black bars on top and bottom be rendered
-  lines: { text: string, fontSize?: string }[] // list of lines to be rendered
+  lines: { text: string, fontSize?: string }[], // list of lines to be rendered
+  glitchEffect?: { time: number } | false; // adds a glitch effect. Should contain object with information how long should animation loop take
 };
 ```
