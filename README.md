@@ -60,6 +60,64 @@ Effect:
 
 ![Animation](https://user-images.githubusercontent.com/10486394/233835406-5a02eaf6-3374-491b-97ba-813512fab075.gif)
 
+### Glitch Effect:
+
+```js
+const overlayConfig = {
+    positionX: 'center',
+    positionY: 'center',
+    closeTime: 18,
+    blockInteractions: false
+}
+
+const textConfig = {
+    offsetX: '20px',
+    offsetY: '0',
+    typingTime: 1.5,
+    delay: 0.5,
+    blackBars: false,
+    aboveUi: false,
+    glitchEffect: { time: 0.5 },
+    lines: [
+      {
+        text: '>//CC: FORCOMM X-X DESG:: “BROADCAST”',
+        fontSize: '30px',
+      },
+      {
+        text: '>//if:::HOSTILE=TRUE then:::',
+        fontSize: '30px',
+      },
+      {
+        text: '>//WIPE THEM ALL AWAY',
+        fontSize: '30px'
+      },
+      {
+        text: '>//EVERY SINGLE ONE OF THEM',
+        fontSize: '30px'
+      },
+      {
+        text: '>//KILL THEM WITH PREJUDICE LEAVE NO GROUND UNBURNED',
+        fontSize: '30px'
+      },
+      {
+        text: '>//if:::CINDERS ASH DARK SMOKE=TRUE then:::',
+        fontSize: '30px'
+      },
+      {
+        text: '>//AWAIT FURTHER TASKING',
+        fontSize: '30px'
+      },
+    ]
+  }
+
+
+const anarchistOverlay = game.modules.get('anarchist-overlay');
+textHtml = await anarchistOverlay.createTextCrawlHtml(textConfig);
+
+
+anarchistOverlay.createOverlay(overlayConfig, textHtml);
+```
+![Animation-4](https://github.com/reynevan24/anarchist-overlay/assets/10486394/7a0c55be-2a1b-4bb2-b987-df6e6fc78b7d)
 
 ## Config
 ```js
