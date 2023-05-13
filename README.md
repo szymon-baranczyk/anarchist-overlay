@@ -70,7 +70,8 @@ export type OverlayConfig = {
   fadeOnClose?: boolean; // should overlay fade out after closeTime
   closeTime?: number; // how long overlay should stay open, in seconds
   closeAllWindows?: boolean; // should all windows (character sheets etc.) be closed before overlay initialization
-  aboveUi?: boolean; // should it render above or under UI (above blocks interactivity until overlay closes
+  aboveUi?: boolean; // should it render above or under UI (above blocks interactivity until overlay closes,
+  blockInteractions?: boolean; // should it block interactions with canvas and/or UI (defaults to true)
 }
 //Text config
 export type TextCrawlConfig = {
